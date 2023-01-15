@@ -16,11 +16,11 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('docs', app, document);
 
-  app.enableCors({
-    origin: process.env.CORS_ORIGIN,
-    methods: 'GET, PUT, POST, DELETE',
-    allowedHeaders: 'Content-Type, Authorization',
-  });
+  // app.enableCors({
+  //   origin: process.env.CORS_ORIGIN,
+  //   methods: 'GET, PUT, POST, DELETE',
+  //   allowedHeaders: 'Content-Type, Authorization',
+  // });
   app.use(
     session({
       secret: 'secret',
