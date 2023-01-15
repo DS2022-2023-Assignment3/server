@@ -5,7 +5,7 @@ import * as passport from 'passport';
 import * as session from 'express-session';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule, { cors: true });
+  const app = await NestFactory.create(AppModule);
 
   const config = new DocumentBuilder()
     .setTitle('EnergyChartter-API')
@@ -37,6 +37,8 @@ async function bootstrap() {
   //   optionsSuccessStatus: 204,
   //   credentials: true,
   // });
+
+  app.enableCors();
 
   await app.listen(8000);
 }
