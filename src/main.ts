@@ -16,7 +16,10 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('docs', app, document);
 
-  app.enableCors();
+  // app.options('/*', (_, res) => {
+  //   res.sendStatus(200);
+  // });
+
   app.use(
     session({
       secret: 'secret',
@@ -26,6 +29,7 @@ async function bootstrap() {
   );
   app.use(passport.initialize());
   app.use(passport.session());
+  app.enableCors();
 
   await app.listen(8000);
 }
