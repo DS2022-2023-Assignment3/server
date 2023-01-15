@@ -30,10 +30,12 @@ async function bootstrap() {
   // app.use(passport.initialize());
   // app.use(passport.session());
   app.enableCors({
-    origin: '*',
+    origin: false,
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    allowedHeaders: ['Content-Type', 'Authorization'],
     preflightContinue: false,
     optionsSuccessStatus: 204,
+    credentials: true,
   });
 
   await app.listen(8000);
