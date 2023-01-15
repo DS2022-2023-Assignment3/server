@@ -20,15 +20,15 @@ async function bootstrap() {
   //   res.sendStatus(200);
   // });
 
-  app.use(
-    session({
-      secret: 'secret',
-      resave: false,
-      saveUninitialized: false,
-    }),
-  );
-  app.use(passport.initialize());
-  app.use(passport.session());
+  // app.use(
+  //   session({
+  //     secret: 'secret',
+  //     resave: false,
+  //     saveUninitialized: false,
+  //   }),
+  // );
+  // app.use(passport.initialize());
+  // app.use(passport.session());
   app.enableCors({ optionsSuccessStatus: 200 });
 
   await app.listen(8000);
